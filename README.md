@@ -53,7 +53,7 @@ matching version directory under the package path.
 Compile the example:
 
 ```sh
-typst compile template/main.typ oxford-document.pdf
+typst compile template/main.typ oxford-document.pdf --root .
 ```
 
 ## Presentations
