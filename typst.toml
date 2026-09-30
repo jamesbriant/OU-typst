@@ -2,7 +2,7 @@
 name = "oxford-brand"
 version = "0.1.1"
 entrypoint = "lib.typ"
-authors = ["Oxford Typst contributors"]
+authors = ["James Briant <james.briant@dtc.ox.ac.uk>"]
 description = "A University of Oxford-branded Typst document template."
 
 [template]
