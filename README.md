@@ -86,8 +86,8 @@ only a demonstration of those calls.
 
 Available layouts are `title_image`, `title` (with `dark: true` for the Oxford
 Blue variant), `section`, `text_only`, `text_figure`, `two_column`,
-`two_column_figure`, `three_column`, `image_caption`, `figure`, `visual_caption`,
-and `contact`. Required
+`two_column_figure`, `three_column`, `box_grid`, `image_caption`, `figure`,
+`visual_caption`, and `contact`. Required
 content is positional; optional fields such as `lead`, `body`, `picture`,
 `visual`, `credit`, and `social` are named. `visual` accepts any Typst content,
 such as a `figure`, chart, diagram or graphic; it takes precedence over
@@ -103,6 +103,22 @@ optional and lets a document choose its own styling tool:
 #(slides.visual_caption)(
   [A command-line workflow],
   visual: [#raw("$ typst compile deck.typ deck.pdf", block: true)],
+)
+```
+
+`box_grid` creates an equal-size matrix in the standard slide content area.
+Use `nrows: 4, ncols: 1` for a list. Box numbers are one-based;
+`highlighted` uses Oxford Royal Blue and `deactivated` uses a faded version of
+the standard box palette:
+
+```typst
+#(slides.box_grid)(
+  [Delivery stages],
+  ([Discover], [Design], [Build], [Sustain]),
+  nrows: 4,
+  ncols: 1,
+  highlighted: (3,),
+  deactivated: (4,),
 )
 ```
 
