@@ -4,9 +4,26 @@ An A4 University of Oxford document template based on the supplied Oxford Blue
 PowerPoint template. It uses Oxford Blue (`#002147`) by default and prefers the
 approved Roboto and Noto Serif typefaces.
 
-## Install the package locally
+## Use
 
-The package is not published to the typst universe yet. There are two ways to install this checkout locally:
+### Published release
+
+After this version is accepted into Typst Universe, import it directly:
+
+```typst
+#import "@preview/oxford-brand:0.1.0": presentation
+```
+
+Because this is also a template package, create a starter project with:
+
+```sh
+typst init @preview/oxford-brand:0.1.0 my-oxford-document
+```
+
+### Local development
+
+Before publication, or while testing changes, install this checkout locally.
+There are two options:
 
 1. **Permanent install:** copy the repository into Typst's local package path. Future changes to this checkout will not be picked up automatically.
 2. **Dynamic install:** create a symbolic link to this checkout. Changes here are then available immediately.
@@ -33,22 +50,11 @@ point to this repository and be named `0.1.0`:
 ln -sfn "$PWD" "<package-path>/local/oxford-brand/0.1.0"
 ```
 
-## Use
-
-Import it from any local Typst project with:
+Import the local development version with:
 
 ```typst
 #import "@local/oxford-brand:0.1.0": presentation
 ```
-
-Because this is also a template package, create a starter project with:
-
-```sh
-typst init @local/oxford-brand:0.1.0 my-oxford-document
-```
-
-To use a later release, update `version` in `typst.toml` and install it in a
-matching version directory under the package path.
 
 Compile the example:
 
