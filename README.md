@@ -21,16 +21,16 @@ For a permanent install:
 
 ```sh
 mkdir -p "<package-path>/local/oxford-brand"
-cp -R . "<package-path>/local/oxford-brand/0.1.0"
+cp -R . "<package-path>/local/oxford-brand/0.1.1"
 ```
 
 ### 2. Dynamic install
 
 For a dynamic install, use a symbolic link instead of copying. The link must
-point to this repository and be named `0.1.0`:
+point to this repository and be named `0.1.1`:
 
 ```sh
-ln -sfn "$PWD" "<package-path>/local/oxford-brand/0.1.0"
+ln -sfn "$PWD" "<package-path>/local/oxford-brand/0.1.1"
 ```
 
 ## Use
@@ -38,13 +38,13 @@ ln -sfn "$PWD" "<package-path>/local/oxford-brand/0.1.0"
 Import it from any local Typst project with:
 
 ```typst
-#import "@local/oxford-brand:0.1.0": presentation
+#import "@local/oxford-brand:0.1.1": presentation
 ```
 
 Because this is also a template package, create a starter project with:
 
 ```sh
-typst init @local/oxford-brand:0.1.0 my-oxford-document
+typst init @local/oxford-brand:0.1.1 my-oxford-document
 ```
 
 To use a later release, update `version` in `typst.toml` and install it in a
