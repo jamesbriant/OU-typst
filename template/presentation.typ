@@ -116,9 +116,9 @@
       #pagebreak(weak: true)
       #base()[
         #lockup()
-        #if panel { place(left + top, dx: 0.65in, dy: 1.45in)[#rect(width: 6.5in, height: 4.35in, fill: colours.off-white)] }
-        #place(left + top, dx: logo-x, dy: 1.65in)[
-          #block(width: if panel { 5.95in } else { 9.9in })[
+        #if panel { place(left + top, dx: 0.65in, dy: 1.45in)[#rect(width: 12.0in, height: 4.9in, fill: colours.off-white)] }
+        #place(left + top, dx: if panel { 0.85in } else { logo-x }, dy: 1.65in)[
+          #block(width: if panel { 11.44in } else { 9.9in })[
             #text(font: serif, size: 32pt)[#title]
             #if lead != none { v(0.22in); text(size: 17pt)[#lead] }
             #if body != none { v(0.28in); text(size: 16pt, fill: colours.charcoal)[#body] }
@@ -186,6 +186,38 @@
             [#text(size: 16pt, fill: colours.charcoal)[#text(fill: colours.blue)[#third-title]#linebreak()#third-body]],
           )
         ]
+        #footer()
+      ]
+    ],
+    box_grid: (title, items, nrows: 2, ncols: 2, highlighted: (), deactivated: ()) => [
+      #page(width: 13.333in, height: 7.5in, margin: 0pt, fill: white)[
+        #set text(font: sans, fill: colours.blue)
+        #let row-height = (3.8in - (nrows - 1) * 0.18in) / nrows
+        #place(left + top, dx: logo-x, dy: 1.65in)[#block(width: 11.44in)[#text(font: serif, size: 30pt)[#title]]]
+        #place(left + top, dx: 0.65in, dy: 2.55in)[
+          #block(width: 12.0in, height: 3.8in)[
+            #grid(
+              columns: range(ncols).map(_ => 1fr),
+              rows: range(nrows).map(_ => row-height),
+              column-gutter: 0.18in,
+              row-gutter: 0.18in,
+              ..items.enumerate().map(((i, item)) => {
+                let number = i + 1
+                let active = highlighted.contains(number)
+                let muted = deactivated.contains(number)
+                block(
+                  width: 100%,
+                  height: 100%,
+                  fill: if active { colours.royal-blue } else if muted { rgb("#FAF9F9") } else { colours.off-white },
+                  inset: 0.24in,
+                )[
+                  #text(size: 18pt, fill: if active { white } else if muted { colours.stone-grey } else { colours.charcoal })[#item]
+                ]
+              }),
+            )
+          ]
+        ]
+        #lockup()
         #footer()
       ]
     ],

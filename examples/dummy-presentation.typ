@@ -55,6 +55,44 @@
   [Improve, maintain and share the resulting tools.],
 )
 
+#(slides.box_grid)(
+  [A shared research-software service],
+  (
+    [Research teams],
+    [Research Software Engineering],
+    [University technology services],
+    [External collaborators],
+  ),
+  highlighted: (2,),
+  deactivated: (4,),
+)
+
+#(slides.box_grid)(
+  [From idea to sustainable software],
+  (
+    [Discover research needs],
+    [Design a practical approach],
+    [Build and test],
+    [Release, maintain and share],
+  ),
+  nrows: 4,
+  ncols: 1,
+  highlighted: (3,),
+  deactivated: (4,),
+)
+
+#(slides.box_grid)(
+  [A portfolio of support],
+  (
+    [Consultancy], [Embedded collaborations], [Training],
+    [Community practice], [Research infrastructure], [Open-source tools],
+  ),
+  nrows: 2,
+  ncols: 3,
+  highlighted: (2, 5),
+  deactivated: (6,),
+)
+
 #(slides.text_figure)(
   [A practical partnership],
   lead: [Embedded expertise alongside research teams.],

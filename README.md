@@ -21,16 +21,16 @@ For a permanent install:
 
 ```sh
 mkdir -p "<package-path>/local/oxford-brand"
-cp -R . "<package-path>/local/oxford-brand/0.1.0"
+cp -R . "<package-path>/local/oxford-brand/0.1.1"
 ```
 
 ### 2. Dynamic install
 
 For a dynamic install, use a symbolic link instead of copying. The link must
-point to this repository and be named `0.1.0`:
+point to this repository and be named `0.1.1`:
 
 ```sh
-ln -sfn "$PWD" "<package-path>/local/oxford-brand/0.1.0"
+ln -sfn "$PWD" "<package-path>/local/oxford-brand/0.1.1"
 ```
 
 ## Use
@@ -38,13 +38,13 @@ ln -sfn "$PWD" "<package-path>/local/oxford-brand/0.1.0"
 Import it from any local Typst project with:
 
 ```typst
-#import "@local/oxford-brand:0.1.0": presentation
+#import "@local/oxford-brand:0.1.1": presentation
 ```
 
 Because this is also a template package, create a starter project with:
 
 ```sh
-typst init @local/oxford-brand:0.1.0 my-oxford-document
+typst init @local/oxford-brand:0.1.1 my-oxford-document
 ```
 
 To use a later release, update `version` in `typst.toml` and install it in a
@@ -86,8 +86,8 @@ only a demonstration of those calls.
 
 Available layouts are `title_image`, `title` (with `dark: true` for the Oxford
 Blue variant), `section`, `text_only`, `text_figure`, `two_column`,
-`two_column_figure`, `three_column`, `image_caption`, `figure`, `visual_caption`,
-and `contact`. Required
+`two_column_figure`, `three_column`, `box_grid`, `image_caption`, `figure`,
+`visual_caption`, and `contact`. Required
 content is positional; optional fields such as `lead`, `body`, `picture`,
 `visual`, `credit`, and `social` are named. `visual` accepts any Typst content,
 such as a `figure`, chart, diagram or graphic; it takes precedence over
@@ -103,6 +103,22 @@ optional and lets a document choose its own styling tool:
 #(slides.visual_caption)(
   [A command-line workflow],
   visual: [#raw("$ typst compile deck.typ deck.pdf", block: true)],
+)
+```
+
+`box_grid` creates an equal-size matrix in the standard slide content area.
+Use `nrows: 4, ncols: 1` for a list. Box numbers are one-based;
+`highlighted` uses Oxford Royal Blue and `deactivated` uses a faded version of
+the standard box palette:
+
+```typst
+#(slides.box_grid)(
+  [Delivery stages],
+  ([Discover], [Design], [Build], [Sustain]),
+  nrows: 4,
+  ncols: 1,
+  highlighted: (3,),
+  deactivated: (4,),
 )
 ```
 
