@@ -3,9 +3,5 @@ name = "oxford-brand"
 version = "0.1.1"
 entrypoint = "lib.typ"
 authors = ["James Briant <james.briant@dtc.ox.ac.uk>"]
-description = "A University of Oxford-branded Typst document template."
-
-[template]
-path = "template"
-entrypoint = "main.typ"
-thumbnail = "thumbnail.png"
+description = "University of Oxford branding for Typst documents and presentations."
+license = "MIT"
